@@ -2,7 +2,7 @@ package com.said.studio;
 
 import com.said.studio.controller.StudioController;
 import com.said.studio.model.StudioModel;
-import com.said.studio.view.StudioView;
+import com.said.studio.view.StudioFrame;
 
 public class App {
 
@@ -11,9 +11,14 @@ public class App {
   public static void main(String[] args) {
     // MVC design pattern
     StudioModel model = new StudioModel();
-    StudioView view = new StudioView(TITLE);
+    StudioFrame view = new StudioFrame(TITLE);
     StudioController controller = new StudioController(model, view);
-    controller.initController();
+
+    // Schedule a job for the event dispatch thread:
+    // creating and showing this application's GUI.
+    javax.swing.SwingUtilities.invokeLater(() -> {
+      controller.initController();
+    });
   }
 
 }
