@@ -1,4 +1,4 @@
-package com.said.studio.view.components;
+package com.said.studio.view.query.editor;
 
 import javax.swing.*;
 import java.awt.*;

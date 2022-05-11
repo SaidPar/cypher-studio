@@ -1,11 +1,15 @@
 package com.said.studio.view;
 
+import com.said.studio.view.connections.ConnectionsTab;
+import com.said.studio.view.connections.ConnectionsTree;
+import com.said.studio.view.query.editor.QueryParentPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class StudioFrame {
 
-  private final DirectoryPanel directoryPanel;
+  private final ConnectionsTab connectionsTab;
   private final QueryParentPanel queryParentPanel;
 
   private JFrame studioFrame;
@@ -19,10 +23,10 @@ public class StudioFrame {
     studioFrame.setLocationRelativeTo(null);
 
     // Panes
-    directoryPanel = new DirectoryPanel();
+    connectionsTab = new ConnectionsTab();
     queryParentPanel = new QueryParentPanel();
 
-    JSplitPane splitPane = new JSplitPane(SwingConstants.VERTICAL, directoryPanel, queryParentPanel);
+    JSplitPane splitPane = new JSplitPane(SwingConstants.VERTICAL, connectionsTab, queryParentPanel);
 
     studioFrame.add(splitPane);
     studioFrame.setSize(500, 500);

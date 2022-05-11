@@ -1,12 +1,12 @@
-package com.said.studio.view;
+package com.said.studio.view.query.editor;
 
-import com.said.studio.view.components.QueryPanel;
+import com.said.studio.view.query.editor.QueryPanel;
 
 import javax.swing.*;
 
-class QueryParentPanel extends JSplitPane {
+public class QueryParentPanel extends JSplitPane {
 
-  QueryParentPanel() {
+  public QueryParentPanel() {
     super();
 
     JPanel queryPane = new QueryPanel();
@@ -15,17 +15,6 @@ class QueryParentPanel extends JSplitPane {
     this.setOrientation(SwingConstants.HORIZONTAL);
     this.setLeftComponent(queryPane);
     this.setRightComponent(resultsPane);
-  }
-
-  private JPanel setupQueryPane() {
-    JPanel queryPane = new JPanel();
-
-    JTextArea queryText = new JTextArea(1, 10);
-    queryText.setText("Query Pane");
-
-    queryPane.add(queryText);
-
-    return queryPane;
   }
 
   private JPanel setupResultsPane() {
