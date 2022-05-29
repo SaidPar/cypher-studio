@@ -1,4 +1,6 @@
-package com.said.studio.view.connections;
+package com.said.studio.data;
+
+import java.util.List;
 
 public class ConnectionInfo {
 
